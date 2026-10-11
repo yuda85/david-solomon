@@ -40,7 +40,7 @@ PAGES_DIR = os.path.join(ROOT, "_src", "pages")
 # זה משפר את התצוגה המקדימה כשמשתפים קישור בוואטסאפ / פייסבוק.
 SITE_URL = ""
 
-ASSET_VERSION = "1"
+ASSET_VERSION = "2"
 
 PHONE_DISPLAY = "052-3931661"
 PHONE_INTL = "972523931661"
@@ -97,6 +97,7 @@ ICONS = {
     "youtube": '<path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/>',
     "instagram": '<rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/>',
     "facebook": '<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>',
+    "award": '<path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/>',
     "clock": '<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>',
     "horse": '<path d="M7 21v-4.5c0-1.5-1-2.5-1-4.5 0-3.5 2.5-6 6-7l1-2.5 1.5 2.5c2 .5 3.5 2 4.5 4l1.5 3.5-2 1.5-2.5-1.5-1 2v6.5"/><path d="M11 21v-4"/><path d="M14.5 8.5h.01"/>',
 }
@@ -114,10 +115,13 @@ def icon(name, cls=""):
             f'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">{ICONS[name]}</svg>')
 
 
+# Mark: open circle, horizon and a rising sun (derived from David's illustration)
 BRAND_MARK = ('<svg class="brand__mark" viewBox="0 0 44 44" aria-hidden="true" focusable="false">'
-              '<path d="M10 38V20a12 12 0 0 1 24 0v18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>'
-              '<path d="M5 38h34" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>'
-              '<circle cx="22" cy="24" r="3.4" fill="#A5512D"/></svg>')
+              '<path class="m-arc" d="M9.98 34.02A17 17 0 1 1 30.5 36.72" fill="none" stroke-width="2.6" stroke-linecap="round"/>'
+              '<path class="m-sun" d="M16 27a6 6 0 0 1 12 0Z"/>'
+              '<path class="m-line" d="M10 27h24" fill="none" stroke-width="2.6" stroke-linecap="round"/></svg>')
+
+TAGLINE = "אנשים. קשר. שינוי אמיתי."
 
 
 def wa(text=None):
@@ -317,9 +321,9 @@ def cta(root, kind=""):
     return f"""<section class="section section--tight">
   <div class="container">
     <div class="cta-band cta-band--simple reveal">
-      <p class="eyebrow">אפשר להתחיל בשיחה</p>
-      <h2>לא צריך לדעת בדיוק מה להגיד.</h2>
-      <p class="lead">מספיקות כמה מילים: מה מביא אתכם, ואיך נוח שאחזור אליכם. משם נמשיך יחד.</p>
+      <p class="eyebrow">יצירת קשר</p>
+      <h2>אפשר להתחיל בשיחה.</h2>
+      <p class="lead">כתבו לי בוואטסאפ, התקשרו, או השאירו פרטים — ואחזור אליכם.</p>
       <div class="btn-row">
         <a class="btn btn--wa" href="{wa()}" target="_blank" rel="noopener">{icon("whatsapp")}כתבו לי בוואטסאפ</a>
         <a class="btn btn--light" href="tel:+{PHONE_INTL}">{icon("phone")}התקשרו: <span class="ltr">{PHONE_DISPLAY}</span></a>
@@ -388,6 +392,7 @@ def footer(root):
           {BRAND_MARK}
           <span class="brand__text"><span class="brand__name">דוד סולומון</span><span class="brand__role">MSW · עובד סוציאלי קליני</span></span>
         </a>
+        <p class="footer__tagline">{TAGLINE}</p>
         <p>טיפול בטראומה, במשברים ובתהליכי שינוי. לאדם, לזוג, למשפחה — ולארגונים ולקהילות.</p>
         <ul class="social" data-social-group hidden aria-label="רשתות חברתיות">
           <li><a data-social="youtube" href="#" hidden target="_blank" rel="noopener" aria-label="יוטיוב">{icon("youtube")}</a></li>
@@ -438,6 +443,8 @@ def layout(meta, body, root):
     key = meta.get("key", "")
     title = meta["title"]
     desc = meta.get("description", "")
+    # share preview (WhatsApp / Facebook): name + tagline on the home page
+    og_title = f"דוד סולומון | {TAGLINE}" if key == "home" else title
     og_img = (SITE_URL.rstrip("/") + "/" if SITE_URL else root) + "assets/img/og-image.jpg"
     page_url = ""
     if SITE_URL:
@@ -463,7 +470,7 @@ def layout(meta, body, root):
 {canonical}<meta property="og:type" content="website">
 <meta property="og:locale" content="he_IL">
 <meta property="og:site_name" content="דוד סולומון">
-<meta property="og:title" content="{html.escape(title)}">
+<meta property="og:title" content="{html.escape(og_title)}">
 <meta property="og:description" content="{html.escape(desc)}">
 <meta property="og:image" content="{og_img}">
 <meta property="og:image:width" content="1200">
