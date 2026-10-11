@@ -1,0 +1,76 @@
+<!--
+out: contact/index.html
+key: contact
+title: יצירת קשר | דוד סולומון — וואטסאפ, טלפון וטופס פנייה
+description: פנייה לטיפול או לתיאום הרצאה, סדנה ופעילות לארגון. וואטסאפ וטלפון 052-3931661, מייל, וקליניקה במושב שדה יעקב.
+-->
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="מיקום באתר"><ol><li><a href="{{root}}">בית</a></li><li aria-current="page">יצירת קשר</li></ol></nav>
+    <p class="eyebrow">יצירת קשר</p>
+    <h1>בואו נדבר.</h1>
+    <p class="lead">הדרך הכי פשוטה היא וואטסאפ או שיחת טלפון. מעדיפים לכתוב? יש כאן טופס קצר לפנייה לטיפול, וטופס נפרד לפנייה בנושא הרצאה, סדנה או פעילות לארגון.</p>
+  </div>
+</section>
+
+<section class="section section--tight" style="padding-top:0">
+  <div class="container">
+    <div class="quick-contact reveal">
+      <a class="contact-item contact-item--wa" href="{{wa}}" target="_blank" rel="noopener">
+        <span class="contact-item__icon">{{icon:whatsapp}}</span>
+        <span><span class="contact-item__label">הכי מהיר</span><span class="contact-item__value">וואטסאפ</span></span>
+      </a>
+      <a class="contact-item contact-item--call" href="{{tel}}">
+        <span class="contact-item__icon">{{icon:phone}}</span>
+        <span><span class="contact-item__label">התקשרו עכשיו</span><span class="contact-item__value">{{phone}}</span></span>
+      </a>
+      <a class="contact-item" href="{{mailto}}">
+        <span class="contact-item__icon">{{icon:mail}}</span>
+        <span><span class="contact-item__label">מייל</span><span class="contact-item__value ltr">{{email}}</span></span>
+      </a>
+      <a class="contact-item" href="{{maps}}" target="_blank" rel="noopener">
+        <span class="contact-item__icon">{{icon:map-pin}}</span>
+        <span><span class="contact-item__label">הקליניקה</span><span class="contact-item__value">מושב שדה יעקב</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="forms">
+  <div class="container contact-layout">
+    <div class="form-card reveal" data-tabs>
+      <div class="tabs" role="tablist" aria-label="סוג הפנייה">
+        <button class="tab" type="button" role="tab" id="tab-therapy" data-tab="therapy" aria-controls="panel-therapy" aria-selected="true">פנייה לטיפול</button>
+        <button class="tab" type="button" role="tab" id="tab-org" data-tab="org" aria-controls="panel-org" aria-selected="false" tabindex="-1">הרצאה, סדנה או פעילות לארגון</button>
+      </div>
+      <div id="panel-therapy" role="tabpanel" aria-labelledby="tab-therapy">
+        <h2 class="h3" style="font-size:var(--fs-h3)">השאירו פרטים ואחזור אליכם</h2>
+        <p class="form-card__intro">שם וטלפון מספיקים. כל השאר — רק אם בא לכם.</p>
+        {{form:therapy}}
+      </div>
+      <div id="panel-org" role="tabpanel" aria-labelledby="tab-org" hidden>
+        <h2 class="h3" style="font-size:var(--fs-h3)">בואו נבנה פעילות לארגון שלכם</h2>
+        <p class="form-card__intro">ספרו בקצרה מי אתם ומה מעניין אתכם. אחזור אליכם כדי לשמוע עוד ולהתאים את הפעילות.</p>
+        {{form:org}}
+      </div>
+    </div>
+
+    <aside class="aside-stack reveal reveal-d1" aria-label="מידע נוסף">
+      <div class="aside-box">
+        <h3>מה קורה אחרי שפונים?</h3>
+        <ol>
+          <li>הפנייה מגיעה ישירות אליי.</li>
+          <li>אחזור אליכם בדרך שביקשתם — טלפון או וואטסאפ.</li>
+          <li>נקבע שיחה ראשונה, ונראה יחד מה מתאים.</li>
+        </ol>
+      </div>
+      <div class="aside-box">
+        <h3>איפה נפגשים</h3>
+        <p class="muted">בקליניקה במושב שדה יעקב, או אונליין בהתאם לצורך. הכתובת המדויקת נשלחת בתיאום.</p>
+        <a class="link-arrow" href="{{maps}}" target="_blank" rel="noopener">לפתיחה במפות {{icon:arrow}}</a>
+      </div>
+      {{hotlines}}
+    </aside>
+  </div>
+</section>

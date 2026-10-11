@@ -1,0 +1,12 @@
+# חומרי המקור שהתקבלו (תמונות מקוריות ומסמך החזון) — לא מפרסמים אותם
+WhatsApp Image *.jpeg
+חזון לבניית אתר.pdf
+
+# קבצי עבודה מקומיים
+.claude/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+_explore/
+.claude-flow/

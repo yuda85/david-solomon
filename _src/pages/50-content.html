@@ -1,0 +1,95 @@
+<!--
+out: content/index.html
+key: content
+title: תוכן, פודקאסטים וסרטונים | דוד סולומון
+description: פודקאסטים, סרטונים ותוכן מקצועי של דוד סולומון על טראומה, זוגיות, משפחה, חזרה ממילואים וחוסן. הופעות בחדשות 13 וב־102FM.
+-->
+
+<section class="page-hero">
+  <div class="container page-hero__grid">
+    <div>
+      <nav class="breadcrumb" aria-label="מיקום באתר"><ol><li><a href="{{root}}">בית</a></li><li aria-current="page">תוכן ופודקאסטים</li></ol></nav>
+      <p class="eyebrow">פודקאסטים · סרטונים · תוכן מקצועי</p>
+      <h1>להכיר אותי, לפני שנפגשים</h1>
+      <p class="lead">כאן אפשר לשמוע איך אני חושב על טראומה, זוגיות, משפחה וחוסן — ולקחת משהו לדרך. התוכן מתעדכן באופן שוטף.</p>
+    </div>
+    <div class="page-hero__media page-hero__media--wide">
+      <figure class="frame ratio-16-10"><img src="{{root}}assets/img/podcast-recording.webp" width="1200" height="624" alt="הקלטת פודקאסט באולפן 102FM עם דוד סולומון" fetchpriority="high"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="section-num">בתקשורת</p>
+      <h2>שיחות וראיונות</h2>
+    </div>
+    <div class="cards">
+      <article class="media-card reveal">
+        <div class="media-card__img"><img src="{{root}}assets/img/tv-13-caption.webp" width="1200" height="675" alt="דוד סולומון בכתבה בחדשות 13: מהקרב אל השיקום" loading="lazy"></div>
+        <div class="media-card__body">
+          <p class="media-card__source">{{icon:tv}}חדשות 13 · פותחים יום</p>
+          <h3>מהקרב אל השיקום</h3>
+          <p>כתבה על חוות מתניה והחזרה של לוחמים לחיים, עם דוד כמנהל הקליני של החווה.</p>
+        </div>
+      </article>
+      <article class="media-card reveal reveal-d1">
+        <div class="media-card__img"><img src="{{root}}assets/img/tv-13-panel.webp" width="1200" height="773" alt="דוד סולומון בפאנל באולפן פותחים יום, חדשות 13" loading="lazy"></div>
+        <div class="media-card__body">
+          <p class="media-card__source">{{icon:tv}}חדשות 13 · פותחים יום</p>
+          <h3>אורח באולפן</h3>
+          <p>שיחה באולפן תוכנית הבוקר של חדשות 13.</p>
+        </div>
+      </article>
+      <article class="media-card reveal reveal-d2">
+        <div class="media-card__img"><img src="{{root}}assets/img/radio-102fm.webp" width="1200" height="900" alt="דוד סולומון באולפן 102FM תל אביב" loading="lazy"></div>
+        <div class="media-card__body">
+          <p class="media-card__source">{{icon:mic}}102FM · תל אביב</p>
+          <h3>שיחה באולפן הרדיו</h3>
+          <p>שיחה מוקלטת באולפן. קישור להאזנה יעלה כאן בקרוב.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="section-num">ספריית תוכן</p>
+      <h2>פודקאסטים וסרטונים לפי נושא</h2>
+      <p class="lead">טראומה ופוסט־טראומה, חזרה ממילואים, זוגיות ומשפחה, הורות, וחוסן בארגונים.</p>
+    </div>
+    <div data-videos="all">
+      <div class="video-filters" hidden><div class="chips" role="group" aria-label="סינון לפי נושא"></div></div>
+      <div class="video-grid"></div>
+      <div class="empty-state" hidden>
+        {{icon:play-circle}}
+        <h3>הפרקים והסרטונים הראשונים בדרך</h3>
+        <p>בקרוב יופיעו כאן פודקאסטים וסרטונים, מסודרים לפי נושאים. בינתיים, אפשר תמיד לכתוב לי ולשאול.</p>
+        <div class="btn-row" style="justify-content:center">
+          <a class="btn btn--wa btn--sm" href="{{wa:שלום דוד, אשמח לקבל עדכון כשעולה תוכן חדש}}" target="_blank" rel="noopener">{{icon:whatsapp}}עדכנו אותי כשעולה תוכן</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container center">
+    <div class="section-head section-head--center reveal">
+      <p class="section-num">ברשתות</p>
+      <h2>לעקוב ולהישאר מעודכנים</h2>
+      <p class="lead">ערוץ היוטיוב עם הפודקאסטים והסרטונים, ותוכן קצר באינסטגרם ובפייסבוק.</p>
+    </div>
+    <ul class="social social--big reveal" data-social-group hidden style="justify-content:center">
+      <li><a data-social="youtube" href="#" hidden target="_blank" rel="noopener">{{icon:youtube}}יוטיוב</a></li>
+      <li><a data-social="instagram" href="#" hidden target="_blank" rel="noopener">{{icon:instagram}}אינסטגרם</a></li>
+      <li><a data-social="facebook" href="#" hidden target="_blank" rel="noopener">{{icon:facebook}}פייסבוק</a></li>
+    </ul>
+    <p class="muted mb-0 reveal" data-social-empty>הערוצים ברשתות יעלו כאן בקרוב.</p>
+  </div>
+</section>
+
+{{cta}}
